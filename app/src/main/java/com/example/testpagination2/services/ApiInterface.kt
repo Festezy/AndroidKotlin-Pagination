@@ -1,6 +1,6 @@
 package com.example.testpagination2.services
 
-import com.example.testpagination2.data.CampaignResponse
+import com.example.testpagination2.data.response.CampaignResponse
 import retrofit2.Call
 import retrofit2.http.*
 

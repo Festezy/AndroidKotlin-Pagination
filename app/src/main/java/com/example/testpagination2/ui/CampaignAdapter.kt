@@ -4,24 +4,24 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.testpagination2.data.DataJArrray
-import com.example.testpagination2.data.SumDonation
+import com.example.testpagination2.data.DataCampaign
+import com.example.testpagination2.data.response.DataJArrray
 import com.example.testpagination2.databinding.ItemlistCampaignBinding
 
 class CampaignAdapter: RecyclerView.Adapter<CampaignAdapter.CampaignViewHolder>() {
 
-    private val campList = ArrayList<DataJArrray>()
+    private val campList = ArrayList<DataCampaign>()
     inner class CampaignViewHolder(private val binding: ItemlistCampaignBinding)
         :RecyclerView.ViewHolder(binding.root){
-            fun bind(campaign: DataJArrray){
+            fun bind(campaign: DataCampaign){
                 with(binding){
-                    Glide.with(binding.root).load(campaign.image).into(imgItemPhoto)
+                    Glide.with(binding.root).load(campaign.itemImg).into(imgItemPhoto)
                     tvItemTitle.text = campaign.title
-                    tvItemUser.text = campaign.user?.name
-                    tvItemDesc.text = campaign.description
-                    tvitemTargetDonation.text = campaign.targetDonation
-                    tvItemSumDonate.text = campaign.sumDonation.toString()
+                    tvItemUser.text = campaign.users
+                    tvItemDesc.text = campaign.descriptions
+                    tvitemTargetDonation.text = campaign.targetDonations
                     tvItemMaxDate.text = campaign.maxDate
+                    tvItemSumDonate.text = campaign.sumDonation?: "0"
                 }
             }
     }
@@ -37,7 +37,7 @@ class CampaignAdapter: RecyclerView.Adapter<CampaignAdapter.CampaignViewHolder>(
         holder.bind(campList[position])
     }
 
-    fun addGsonArray(items: ArrayList<DataJArrray>){
+    fun addGsonArray(items: ArrayList<DataCampaign>){
         campList.addAll(items)
         notifyDataSetChanged()
     }

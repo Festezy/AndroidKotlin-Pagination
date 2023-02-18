@@ -1,4 +1,4 @@
-package com.example.testpagination2.data
+package com.example.testpagination2.data.response
 
 
 import com.google.gson.annotations.SerializedName

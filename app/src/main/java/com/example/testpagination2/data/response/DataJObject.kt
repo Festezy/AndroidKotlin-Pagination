@@ -1,6 +1,7 @@
-package com.example.testpagination2.data
+package com.example.testpagination2.data.response
 
 
+import com.example.testpagination2.data.response.DataJArrray
 import com.google.gson.annotations.SerializedName
 
 data class DataJObject(
