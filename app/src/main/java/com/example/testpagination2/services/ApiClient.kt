@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiClient {
-    val BASE_URL: String ="https://backend-donasi.zoinix.com/api/"
+    val BASE_URL: String ="YOUR_APIKEY"
     var retrofit: Retrofit? = null
 
     fun getApiClient(): Retrofit? {
